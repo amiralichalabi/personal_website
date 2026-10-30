@@ -69,6 +69,12 @@ def build(page):
         data = json.loads(ld.string); data['url'] = f'https://{DOMAIN}/fa/'; data['inLanguage'] = 'fa'
         ld.string = json.dumps(data, ensure_ascii=False)
 
+    # Persian pages preload the Persian fonts instead of the Latin ones
+    for t in soup.find_all('link', rel='preload'):
+        h = t.get('href', '')
+        if 'manrope' in h: t['href'] = 'assets/fonts/vazirmatn-arabic-800-normal.woff2'
+        elif 'dm-sans' in h: t['href'] = 'assets/fonts/vazirmatn-arabic-400-normal.woff2'
+
     # relative asset paths -> ../
     def up(v): return v if re.match(r'(https?:|mailto:|tel:|#|\.\./)', v) else '../' + v
     for tag in soup.find_all(['link', 'script', 'img', 'a']):
