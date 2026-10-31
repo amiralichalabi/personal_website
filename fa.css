@@ -1,0 +1,107 @@
+/* Persian (fa/) typography and layout. Loaded after style.css on /fa/ pages only.
+   One family does everything (Arabic-script + matching Latin), so English terms
+   such as "Power BI" sit naturally inside Persian sentences.
+   To try another family change --fa and the @font-face block below. */
+
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-200B,U+200F-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-200B,U+200F-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-200B,U+200F-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Plex Persian';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-200B,U+200F-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+body.rtl{
+  --fa:'Plex Persian','Segoe UI',Tahoma,sans-serif;
+  --label:#47700a;          /* accent for small labels on light surfaces */
+  --label-on-dark:#b7f34b;
+  --soft-text:#55615a;
+  font-family:var(--fa);
+  font-size:18px;
+  line-height:2;
+  text-align:start;
+  font-kerning:normal;
+  text-rendering:optimizeLegibility;
+}
+body.rtl.dark{--label:#b7f34b;--soft-text:#a9b6ae}
+
+/* one family everywhere except the brand mark */
+body.rtl *{font-family:var(--fa);letter-spacing:0;text-transform:none}
+body.rtl .logo{font-family:'Manrope','DM Sans',sans-serif;letter-spacing:-.04em}
+
+/* headings: lighter weights and open leading; Persian does not take tight tracking */
+body.rtl h1,body.rtl h2,body.rtl h3{font-weight:700;line-height:1.45;text-wrap:balance}
+body.rtl h1{font-size:clamp(44px,6.4vw,78px);line-height:1.25;margin:26px 0 22px}
+body.rtl h1 br{display:none}
+body.rtl h1 em{display:inline-block;margin-inline-start:.28em}
+body.rtl .split h2,body.rtl .section-head h2{font-size:clamp(30px,3.6vw,44px);margin:6px 0 14px}
+body.rtl .contact h2{font-size:clamp(34px,4.4vw,54px);line-height:1.4}
+body.rtl .research-card h3{font-size:clamp(24px,2.6vw,31px);line-height:1.6}
+body.rtl .timeline h3,body.rtl .edu h3{font-size:25px;margin:0 0 4px}
+body.rtl .cv-card h3{font-size:26px}
+body.rtl .hero-card h2{font-size:28px;line-height:1.7;font-weight:700}
+body.rtl .projects h3{font-size:22px;line-height:1.6}
+body.rtl .three h3{font-size:20px;line-height:1.7;margin:18px 0 0}
+
+/* running text */
+body.rtl p,body.rtl li{line-height:2}
+body.rtl .lead{font-size:clamp(19px,2vw,22px);line-height:1.95;font-weight:500;max-width:760px}
+body.rtl .large{font-size:clamp(20px,2.1vw,24px);line-height:1.95;font-weight:500}
+body.rtl .hero p{max-width:760px}
+body.rtl blockquote{font-size:21px;font-weight:500;line-height:2;border-left:0;border-right:3px solid #6e9d19;padding:6px 24px 6px 0;margin:30px 0}
+body.dark.rtl blockquote{border-right-color:#b7f34b}
+body.rtl .muted{font-size:16px}
+
+/* labels: no mono, no caps, no tiny type */
+body.rtl small,body.rtl .mono,body.rtl .tag,body.rtl time,body.rtl .facts,body.rtl .status{font-size:14px;font-weight:600;line-height:1.8}
+body.rtl small,body.rtl .mono,body.rtl .tag{color:var(--label)}
+body.rtl .facts{font-weight:500;color:var(--soft-text);margin-top:6px}
+body.rtl time{color:var(--soft-text);font-weight:500;font-size:15px;padding-top:6px}
+body.rtl .hero-card .mono,body.rtl .band-dark small,body.rtl .band-dark .tag,body.rtl .contact small,body.rtl .research-hero small,body.rtl .projects .featured small,body.rtl .metrics small{color:var(--label-on-dark)}
+body.rtl .path small{font-size:15px;font-weight:400;color:var(--soft-text)}
+body.rtl .path span{font-size:14px;color:var(--soft-text)}
+body.rtl .edu .tag{color:inherit;font-size:13px;white-space:nowrap}
+body.rtl .status{letter-spacing:0;padding:3px 12px}
+
+/* chips and buttons */
+body.rtl .chips{gap:8px}
+body.rtl .chips span{font-size:14px;font-weight:500;padding:3px 14px;line-height:1.9}
+body.rtl .btn{font-size:17px;font-weight:600;padding:11px 22px}
+body.rtl .text{font-weight:600;font-size:17px}
+
+/* navigation */
+body.rtl nav{font-size:15px;font-weight:500;gap:22px}
+body.rtl .lang,body.rtl .theme{font-size:14px}
+body.rtl .mobile{font-size:15px;font-weight:600}
+
+/* numbers */
+body.rtl .metrics strong,body.rtl .stat strong,body.rtl .findings b{font-weight:700;line-height:1.4}
+body.rtl .metrics strong{font-size:38px}
+body.rtl .metrics strong span,body.rtl .stat strong span{font-size:16px;font-weight:500}
+body.rtl .metrics p,body.rtl .stat span,body.rtl .findings span{font-size:15px;line-height:1.8}
+body.rtl .findings b{font-size:30px}
+
+/* cards, lists, timeline */
+body.rtl .timeline ul{padding-left:0;padding-right:22px}
+body.rtl .timeline li{margin-bottom:6px}
+body.rtl .interest b{font-size:17px;font-weight:600}
+body.rtl .skills article p{font-size:17px;font-weight:500;line-height:2}
+body.rtl .contact-card{font-size:17px;gap:12px}
+body.rtl .contact-card a[dir=ltr]{unicode-bidi:isolate;text-align:start}
+body.rtl footer{font-size:14px}
+
+/* direction-sensitive details that logical properties do not cover */
+body.rtl .progress{left:auto;right:0}
+body.rtl .skip{left:auto;right:12px}
+body.rtl .path i{transform:scaleX(-1)}
+body.rtl .ticker-track{direction:ltr}
+body.rtl .ticker-track span{font-size:15px;font-weight:500}
+
+@media(max-width:900px){
+  body.rtl{font-size:17px}
+  body.rtl h1{font-size:clamp(40px,12vw,58px)}
+  body.rtl nav{gap:14px}
+  body.rtl .metrics strong{font-size:32px}
+}
+@media(max-width:1100px) and (min-width:901px){body.rtl nav{gap:14px;font-size:14px}}
