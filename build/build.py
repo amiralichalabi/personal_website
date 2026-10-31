@@ -72,8 +72,16 @@ def build(page):
     # Persian pages preload the Persian fonts instead of the Latin ones
     for t in soup.find_all('link', rel='preload'):
         h = t.get('href', '')
-        if 'manrope' in h: t['href'] = 'assets/fonts/vazirmatn-arabic-800-normal.woff2'
-        elif 'dm-sans' in h: t['href'] = 'assets/fonts/vazirmatn-arabic-400-normal.woff2'
+        if 'manrope' in h: t['href'] = 'assets/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2'
+        elif 'dm-sans' in h: t['href'] = 'assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2'
+
+    # Persian-only stylesheet, loaded after the shared one
+    css = soup.find('link', rel='stylesheet')
+    fa_css = soup.new_tag('link', rel='stylesheet', href='fa.css')
+    css.insert_after(fa_css)
+    # RTL flow: Latin terms inside chips/skill lines should follow the page direction
+    for el in soup.select('.chips[dir], .skills p[dir]'):
+        del el['dir']
 
     # relative asset paths -> ../
     def up(v): return v if re.match(r'(https?:|mailto:|tel:|#|\.\./)', v) else '../' + v

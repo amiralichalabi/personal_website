@@ -35,3 +35,7 @@ See `DEPLOY-FA.md`: push to GitHub → enable Pages → `./set-domain.sh yournam
 
 ## Privacy
 The site collects no data. The public contact detail is the e-mail address (also in the CV PDFs). Phone numbers were removed from the site and the PDFs. Editable Word versions of the CVs are intentionally **not** in this repository.
+
+## Persian typography
+
+`fa.css` (loaded only on `/fa/` pages) holds all Persian styling. The font is IBM Plex Sans Arabic, self-hosted in `assets/fonts/`. To try another family, add its woff2 files, replace the `@font-face` block and change `--fa` at the top of `fa.css`, then run `python3 build/build.py`.
