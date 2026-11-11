@@ -72,7 +72,7 @@ def build(page):
     # Persian pages preload the Persian fonts instead of the Latin ones
     for t in soup.find_all('link', rel='preload'):
         h = t.get('href', '')
-        if 'manrope' in h: t['href'] = 'assets/fonts/lalezar-arabic-400-normal.woff2'
+        if 'manrope' in h: t['href'] = 'assets/fonts/vazirmatn-arabic-800-normal.woff2'
         elif 'dm-sans' in h: t['href'] = 'assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2'
 
     # Persian-only stylesheet, loaded after the shared one

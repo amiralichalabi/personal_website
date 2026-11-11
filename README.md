@@ -38,4 +38,4 @@ The site collects no data. The public contact detail is the e-mail address (also
 
 ## Persian typography
 
-`fa.css` (loaded only on `/fa/` pages) holds all Persian styling. Titles use a B Titr style and body text a B Nazanin style. Those two are commercial fonts and cannot be hosted publicly, so the stacks list them first (shown only to visitors who have them installed) and then the self-hosted free look-alikes Lalezar and Noto Naskh Arabic. To try another family, add its woff2 files, replace the `@font-face` block and change `--fa` and `--fa-head` at the top of `fa.css`, then run `python3 build/build.py`.
+`fa.css` (loaded only on `/fa/` pages) holds all Persian styling. Titles use a B Titr style and body text a B Nazanin style. Those two are commercial fonts and cannot be hosted publicly, so the stacks list them first (shown only to visitors who have them installed) and then the self-hosted free look-alikes Vazirmatn ExtraBold and Noto Naskh Arabic. To try another family, add its woff2 files, replace the `@font-face` block and change `--fa` and `--fa-head` at the top of `fa.css`, then run `python3 build/build.py`.

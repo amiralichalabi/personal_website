@@ -111,3 +111,7 @@ body.dark .cert-head,body.dark .cert-card li{border-color:#25302b}
 body.dark .cert-head small{color:#b7f34b}
 body.dark .cert-meta{color:#a9b6ae}
 @media(max-width:900px){.certs{grid-template-columns:1fr}.cert-card:first-child{grid-row:auto}.cert-card{padding:22px 20px 10px}.cert-card li{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* justified body text (both languages) */
+main p,.timeline li,.detail-card li{text-align:justify;text-justify:inter-word;text-align-last:start;hyphens:auto;-webkit-hyphens:auto}
+.metrics p,.stat span,.findings span,.path small,.facts,.cert-meta,.hero-card .links,.contact-card,.muted{text-align:start;text-align-last:start;hyphens:manual}
