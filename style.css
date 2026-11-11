@@ -92,3 +92,22 @@ img{height:auto}
 body.dark .findings b{color:#b7f34b}
 .not-found{min-height:100vh;display:grid;align-items:center}
 nav a[aria-current=true]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px;text-decoration-color:#6e9d19}body.dark nav a[aria-current=true]{text-decoration-color:#b7f34b}
+
+/* certificates */
+.certs{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:start}
+.cert-card{border:1px solid #d8e0d8;background:#f5f7f2;padding:26px 28px 14px;border-radius:16px}
+.cert-card:first-child{grid-row:span 3}
+.cert-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-bottom:1px solid #d2dad3;padding-bottom:14px}
+.cert-head h3{font-size:24px;margin:0}
+.cert-head small{color:#47700a;font-weight:500}
+.cert-card ul{list-style:none;margin:0;padding:0}
+.cert-card li{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid #e1e7e0}
+.cert-card li:last-child{border-bottom:0}
+.cert-card li b{display:block;font-weight:600;line-height:1.45}
+.cert-meta{display:block;font-size:12px;color:#505b54;margin-top:2px}
+.cert-card li .text{margin:0;white-space:nowrap;font-size:14px}
+body.dark .cert-card{border-color:#334039;background:#111916}
+body.dark .cert-head,body.dark .cert-card li{border-color:#25302b}
+body.dark .cert-head small{color:#b7f34b}
+body.dark .cert-meta{color:#a9b6ae}
+@media(max-width:900px){.certs{grid-template-columns:1fr}.cert-card:first-child{grid-row:auto}.cert-card{padding:22px 20px 10px}.cert-card li{flex-direction:column;align-items:flex-start;gap:6px}}
